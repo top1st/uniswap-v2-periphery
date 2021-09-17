@@ -7,7 +7,7 @@ const hre = require("hardhat");
 const {ethers, network} = hre
 require('dotenv').config()
 
-const deployer = new ethers.Wallet(process.env.PRIVATE_KEY)
+const deployer = new ethers.Wallet(process.env.PRIVATE_KEY, ethers.provider)
 
 const factoryAddress = "0xA3BceDADB23CfAA592aC42f5A18C98F98a37dA77"
 
@@ -25,7 +25,7 @@ async function main() {
     // manually to make sure everything is compiled
     // await hre.run('compile');
 
-    const factory = await hre.ethers.getContractAt("IMintyswapV2Factory", "factoryAddress", deployer)
+    const factory = await hre.ethers.getContractAt("IMintyswapV2Factory", factoryAddress, deployer)
     // We get the contract to deploy
     const Router = await hre.ethers.getContractFactory("MintyswapV2Router02", deployer);
     const router = await Router.deploy(factory.address, WETHAddress);
