@@ -12,7 +12,7 @@ const deployer = new ethers.Wallet(process.env.PRIVATE_KEY, ethers.provider)
 const factoryAddress = "0xA3BceDADB23CfAA592aC42f5A18C98F98a37dA77"
 
 const WETHAddress = {
-    'hardhat': '0xc778417E063141139Fce010982780140Aa0cD5Ab',
+    'hardhat': '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
     'mainnet': '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
     'rinkeby': '0xc778417E063141139Fce010982780140Aa0cD5Ab'
 }[network.name]
